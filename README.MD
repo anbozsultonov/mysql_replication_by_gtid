@@ -1,5 +1,5 @@
 ### mysql replication using ```gtid```
-    1. Set master server configs to mysqld.cnf and restart mysql:
+`1. Set master server configs to mysqld.cnf and restart mysql:`
 ***
     sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ***
