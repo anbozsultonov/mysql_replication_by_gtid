@@ -56,6 +56,7 @@ set to
 `4. dump database from master and import to slave server:`
 
     mysqldump -u root -p --databases database_name --single-transaction --triggers --routines --events --set-gtid-purged=ON > /path/database_name_dump.sql
+***
     scp /path/database_name_dump.sql user@slave_ip:/new_path/database_name_dump.sql
 
 #### create new database in slave server:
@@ -66,9 +67,9 @@ set to
     mysql -u root -p crm_reports_test_db < database_name_dump.sql
 
 `5. reset master`
-
+***
     reset master
-    
+***
     CHANGE MASTER TO MASTER_HOST='master_ip', MASTER_PORT=3306, MASTER_USER='user_name', MASTER_PASSWORD='password',MASTER_AUTO_POSITION=1;
     
 `6. start slave and check status;`   
@@ -76,12 +77,10 @@ set to
 run to mysql `start slave;`
 
     show slave status\G
-
 #### it should be like this
 ![img.png](img.png)
 
     SELECT * FROM performance_schema.replication_applier_status_by_worker\G
-
 and check 
 ![img_1.png](img_1.png)
 this params
