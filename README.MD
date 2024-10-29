@@ -77,8 +77,6 @@ set to
 run to mysql `start slave;`
 
     show slave status\G
-#### it should be like this
-![img.png](img.png)
 
     SELECT * FROM performance_schema.replication_applier_status_by_worker\G
 and check 
